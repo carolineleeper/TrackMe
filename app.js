@@ -1,8 +1,9 @@
-const devices = [];
+// const devices = [];
+// devices.push({ user: "Mary", name: "Mary's iPhone" });
+// devices.push({ user: "Alex", name: "Alex's Surface Pro" });
+// devices.push({ user: "Mary", name: "Mary's MacBook" });
 
-devices.push({ user: "Mary", name: "Mary's iPhone" });
-devices.push({ user: "Alex", name: "Alex's Surface Pro" });
-devices.push({ user: "Mary", name: "Mary's MacBook" });
+const devices = JSON.parse(localStorage.getItem('devices')) || [];
 
 // JavaScript
 // devices.forEach(function(device) 
@@ -47,5 +48,6 @@ $('#add-device').on('click', function () {
     const user = $('#user').val();
     const name = $('#name').val();
     devices.push({ user, name }); // when variable identifier and object key are the same, only need once
+    localStorage.setItem('devices', JSON.stringify(devices));
     location.href = 'device-list.html';
 });
