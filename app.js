@@ -4,6 +4,7 @@ devices.push({ user: "Mary", name: "Mary's iPhone" });
 devices.push({ user: "Alex", name: "Alex's Surface Pro" });
 devices.push({ user: "Mary", name: "Mary's MacBook" });
 
+// JavaScript
 // devices.forEach(function(device) 
 // {
 //     const table = document.querySelector('#devices');
@@ -23,6 +24,7 @@ devices.push({ user: "Mary", name: "Mary's MacBook" });
 //     table.appendChild(row);
 // });
 
+// jQuery
 devices.forEach(function(device) {
     $('#devices tbody').append(`
         <tr>
@@ -30,4 +32,20 @@ devices.forEach(function(device) {
             <td>${device.name}</td>
         </tr>`
     );
+});
+
+// JavaScript
+// document.querySelector('#add-device').addEventListener('click', function() {
+//     const user = document.querySelector('#user').value;
+//     const name = document.querySelector('#name').value;
+//     device.push({ user: user, name: name });
+//     console.log(devices);
+// });
+
+// jQuery
+$('#add-device').on('click', function () {
+    const user = $('#user').val();
+    const name = $('#name').val();
+    devices.push({ user, name }); // when variable identifier and object key are the same, only need once
+    location.href = 'device-list.html';
 });
