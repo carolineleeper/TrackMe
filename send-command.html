@@ -5,24 +5,19 @@
     <meta name="description" content="A frontend dashboard for the TrackMe application" />
     <meta name="author" content="Caroline" />
     <meta name="viewport" content="width=device-width, initialscale=1.0">
-    <title>Device List</title>
+    <title>Send Command</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Devices</h1>
+        <h1>Send Command</h1>
         
-        <table id="devices" class="table">
-            <thead>
-                <tr>
-                    <th>User</th>
-                    <th>Device</th>
-                </tr>
-            </thead>
-            <tbody></tbody>
-        </table>
+        <div class="form-group">
+            <label for="command">Command</label>
+            <textarea rows="2" class="form-control" id="command"></textarea>
+        </div>
 
-        <p><a href="register-device.html">Register Device</a></p>
+        <button class="btn btn-success" id="send-command">Send</button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

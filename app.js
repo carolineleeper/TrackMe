@@ -26,7 +26,8 @@ const devices = JSON.parse(localStorage.getItem('devices')) || [];
 // });
 
 // jQuery
-devices.forEach(function(device) {
+devices.forEach(function(device) 
+{
     $('#devices tbody').append(`
         <tr>
             <td>${device.user}</td>
@@ -36,7 +37,8 @@ devices.forEach(function(device) {
 });
 
 // JavaScript
-// document.querySelector('#add-device').addEventListener('click', function() {
+// document.querySelector('#add-device').addEventListener('click', function() 
+// {
 //     const user = document.querySelector('#user').value;
 //     const name = document.querySelector('#name').value;
 //     device.push({ user: user, name: name });
@@ -44,10 +46,16 @@ devices.forEach(function(device) {
 // });
 
 // jQuery
-$('#add-device').on('click', function () {
+$('#add-device').on('click', function () 
+{
     const user = $('#user').val();
     const name = $('#name').val();
     devices.push({ user, name }); // when variable identifier and object key are the same, only need once
     localStorage.setItem('devices', JSON.stringify(devices));
     location.href = 'device-list.html';
+});
+
+$('#send-command').on('click', function() {
+    const command = $('#command').val();
+    console.log(`command is: ${command}`);
 });
