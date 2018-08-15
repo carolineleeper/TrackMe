@@ -1,3 +1,5 @@
+$('#navbar').load('navbar.html');
+
 // JavaScript
 // const devices = [];
 // devices.push({ user: "Mary", name: "Mary's iPhone" });
