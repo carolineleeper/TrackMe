@@ -36,14 +36,23 @@ $('#registerButton').on('click', () => {
     const password = $('#password').val();
     const confirmPassword = $('#confirmPassword').val();
 
-    users.push({ username, password, confirmPassword });
-    localStorage.setItem('users', JSON.stringify(users));
+    const exists = users.find(user => user.username === username);
+    const message = $('#errorMessage');
 
-    console.log(username);
-    console.log(password);
-    console.log(confirmPassword);
+    if (exists) {
+        message.html('You already have an account!');
+    }
+    else {
+        if (password === confirmPassword) {
+            message.html('Account created!');
+            users.push({ username, password, confirmPassword });
+            localStorage.setItem('users', JSON.stringify(users));
+            location.href = 'login.html';
+        }
+        else {
+            message.html('Passwords do not match, you idiot!');
+        }
+    };
 });
 
-const exists = users.find((user) => {
-    return user.name === username;
-});
+// up to task 10
