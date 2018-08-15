@@ -5,4 +5,7 @@
 </footer>
 <script>
     const footer = document.querySelector('#footerText');
+    const currentYear = new Date().getFullYear();
+    const yearText = currentYear.toString();
+    footer.innerHTML = footer.innerHTML + yearText;
 </script>

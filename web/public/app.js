@@ -13,7 +13,7 @@ devices.forEach(function(device)
     );
 });
 
-$('#add-device').on('click', function () 
+$('#add-device').on('click', function() 
 {
     const user = $('#user').val();
     const name = $('#name').val();
