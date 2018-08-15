@@ -26,3 +26,13 @@ $('#send-command').on('click', function() {
     const command = $('#command').val();
     console.log(`command is: ${command}`);
 });
+
+$('#registerButton').on('click', () => {
+    const username = $('#username').val();
+    const password = $('#password').val();
+    const confirmPassword = $('#confirmPassword').val();
+
+    console.log(username);
+    console.log(password);
+    console.log(confirmPassword);
+});
