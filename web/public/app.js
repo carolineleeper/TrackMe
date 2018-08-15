@@ -54,7 +54,7 @@ $('#add-device').on('click', function ()
     const name = $('#name').val();
     devices.push({ user, name }); // when variable identifier and object key are the same, only need once
     localStorage.setItem('devices', JSON.stringify(devices));
-    location.href = 'device-list.html';
+    location.href = '/';
 });
 
 $('#send-command').on('click', function() {
